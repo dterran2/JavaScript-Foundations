@@ -40,7 +40,9 @@ var numerator = monthlyInterestRate*(Math.pow((1+monthlyInterestRate), periods))
 var denominator = (Math.pow((1+monthlyInterestRate), periods))-1;
 var monthlyRate = (principal*(numerator/denominator)).toFixed(2);
 
-alert(monthlyRate);
+
+
+// alert(monthlyRate);
 
 
 // 🏡 Task 3: Function
@@ -53,7 +55,7 @@ function mortgageCalculator(principal, interest, periods){
     return name + ', your monthly rate is ' + monthlyRate;
 }
 
-alert(mortgageCalculator(2000000, 0.05, 30));
+// alert(mortgageCalculator(2000000, 0.05, 30));
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -85,10 +87,12 @@ function mortgageCalculator(principal, interest, periods){
     return name + ' with and interest rate of ' + newInterest + ', your monthly rate is ' + monthlyRate;
 }
 
-alert(mortgageCalculator(200000, 1, 30))
+  alert(mortgageCalculator(200000, 2, 30))
 
 // 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
+/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, 
+except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. 
+Complete these calculations using a for loop.
 
 For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
@@ -97,7 +101,7 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.03, your monthly rate is $843"
 "{Name}, with an interest rate of 0.035, your monthly rate is $898"
 "{Name}, with an interest rate of 0.04, your monthly rate is $955"
-"{Name}, with an interest rate of 0.045, your monthly rate is $1013"
+"{Name}, with an interest rate of 0.045, your monthly rate is $1013" 
 "{Name}, with an interest rate of 0.05, your monthly rate is $1074"
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
@@ -105,6 +109,24 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 
+function variableInterestRate(principal, interest, periods){
+    var monthlyInterestRate = (interest-i)/12;
+    var periods = years*12;
+    let i = (interest-0.2);
+    var numerator = monthlyInterestRate*(Math.pow((1+monthlyInterestRate), periods));
+    var denominator = (Math.pow((1+monthlyInterestRate), periods))-1;
+    var monthlyRate = (principal*(numerator/denominator)).toFixed(2);
+    
+    for (let i = interest-.02; i <= interest + 0.02; i = i + 0.005) {
+        
+        
+       console.log (name + ', with an interest rate of ' + i.toFixed(3) + ' , your monthly rate is $' + monthlyRate);
+    }
+   }
+   
+   
+console.log(variableInterestRate(200000, 0.04 , 30))
+   
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
